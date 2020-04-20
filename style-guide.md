@@ -41,6 +41,8 @@ The designs were created to the following widths:
 - Family: lato light 
 - Weights: 300
 
+
+
 ## Icons
 
 For the social icons, you can use a font icon library. Some suggestions can be found below:

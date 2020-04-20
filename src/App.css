@@ -1,10 +1,8 @@
 .app {
   max-width: 120rem;
-  min-height: 100vh;
-  margin: 0 auto;
+  height: 100vh;
+  overflow: hidden;
 
-  
   display: flex;
   justify-content: space-between;
-  
 }

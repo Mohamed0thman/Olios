@@ -6,7 +6,7 @@ import Carousel from "../../components/slider/slider.component";
 import "./homePage.styles.scss";
 
 const HomePage = () => (
-  <div className='home-page'>
+  <div className="home-page">
     <Header />
     <Carousel />
   </div>
