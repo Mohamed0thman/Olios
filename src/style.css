@@ -1,10 +1,10 @@
 @font-face {
   font-family: "icomoon";
-  src: url("fonts/icomoon.eot?c6aoxn");
-  src: url("fonts/icomoon.eot?c6aoxn#iefix") format("embedded-opentype"),
-    url("fonts/icomoon.ttf?c6aoxn") format("truetype"),
-    url("fonts/icomoon.woff?c6aoxn") format("woff"),
-    url("fonts/icomoon.svg?c6aoxn#icomoon") format("svg");
+  src: url("fonts/icomoon.eot?612cby");
+  src: url("fonts/icomoon.eot?612cby#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?612cby") format("truetype"),
+    url("fonts/icomoon.woff?612cby") format("woff"),
+    url("fonts/icomoon.svg?612cby#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-mail:before {
+  content: "\e909";
+}
+.icon-email:before {
+  content: "\e909";
+}
+.icon-letter:before {
+  content: "\e909";
+}
+.icon-envelope:before {
+  content: "\e909";
+}
+.icon-contact:before {
+  content: "\e909";
+}
+.icon-key:before {
+  content: "\e906";
+}
+.icon-password:before {
+  content: "\e906";
+}
+.icon-lock:before {
+  content: "\e908";
+}
+.icon-log-out:before {
+  content: "\e90a";
+}
+.icon-user:before {
+  content: "\e907";
+}
 .icon-kids-room:before {
   content: "\e901";
 }
@@ -52,4 +82,7 @@
 }
 .icon-search:before {
   content: "\73";
+}
+.icon-google:before {
+  content: "\ea88";
 }

@@ -1,0 +1,43 @@
+.custom-button {
+  max-width: 250px;
+  width: 100%;
+  background-color: #0023ff;
+  color: #ffff;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  padding: 1.3rem 0;
+  border: 1px solid #0023ff;
+  border-radius: 2px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    background-color: white;
+    color: #0023ff;
+  }
+
+  &.google-sign-in {
+    background-color: #de5246;
+    border: 1px solid #de5246;
+    color: white;
+    font-size: 1.4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .google {
+      margin-right: 0px;
+      font-size: 2.5rem;
+      margin-right: 14px;
+    }
+
+    &:hover {
+      background-color: white;
+      color: #de5246;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@mixin active {
+  color: #0023ff;
+}
+
+.group {
+  position: relative;
+
+  .form-input {
+    width: 100%;
+    padding: 1rem 2rem 1rem 4rem;
+    margin-bottom: 3rem;
+
+    &:focus,
+    &:active {
+      outline: none;
+      background-color: none;
+    }
+
+    &:focus ~ .form-input-label {
+      @include active();
+    }
+    
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  }
+
+  .form-input-label {
+    color: #d8d8d8;
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: absolute;
+    left: 6px;
+    line-height: 1.6;
+
+    &.active {
+      @include active();
+    }
+  }
+}

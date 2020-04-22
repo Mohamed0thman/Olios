@@ -1,0 +1,14 @@
+.shop {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+
+  .title {
+  }
+
+  .shop-item-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

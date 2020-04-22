@@ -1,0 +1,35 @@
+.side-menu {
+  width: 30rem;
+  height: 100%;
+  background-color: #ffffff;
+  margin-left: 0.5rem;
+  position: relative;
+ 
+
+  .button {
+    width: 6rem;
+    height: 6rem;
+    background-color: #efefef;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: -30px;
+
+    cursor: pointer;
+  }
+
+  .icon {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "\2039";
+      font-size: 6rem;
+      font-weight: bold;
+      display: inline-block;
+      position: absolute;
+      top: -12px;
+      left: 16px;
+    }
+  }
+}

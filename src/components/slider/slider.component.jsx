@@ -13,6 +13,7 @@ export default () => (
     showThumbs={false}
     showStatus={false}
     cancelable={false}
+    
   >
     <div className="image">
       <img

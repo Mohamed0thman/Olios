@@ -1,0 +1,18 @@
+.basket-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+
+  .item-count {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    background-color: #de5246;
+    border-radius: 50%;
+    position: absolute;
+    left: -8px;
+    bottom: 8px;
+  }
+}

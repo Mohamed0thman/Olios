@@ -1,48 +1,51 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+import GoTo from "../go-to/go-to.component";
 
 import "./right-menu.styles.scss";
 
 const RightMenu = () => {
-  const [backgroundState, backgroundToggleState] = useState("background");
-  const [iconState, iconToggleState] = useState("icon");
+  const [hiddenState, setHiddenState] = useState("");
+  const [iconState, iconToggleState] = useState("");
 
   const toggle = () => {
-    backgroundToggleState(
-      backgroundState === "background" ? "background -active" : "background"
-    );
-    iconToggleState(iconState === "icon" ? "icon -active" : "icon");
+    setHiddenState(hiddenState === "" ? "-active" : "");
+    iconToggleState(iconState === "" ? "-active" : "");
   };
 
   return (
     <div className="right-menu">
       <div className="button" onClick={toggle}>
-        <span className={iconState}>&nbsp;</span>
+        <span className={`icon ${iconState}`}>&nbsp;</span>
       </div>
 
-      <div className={backgroundState}>
+      <div className={`background ${hiddenState}`}>
         <ul className="list">
           <li className="item">
             <span className="text">LIVING ROOM</span>
-            <span class="icon-living-room icon"></span>
+            <span className="icon-living-room icon"></span>
           </li>
           <li className="item">
             <span className="text">OFFICE</span>
-            <span class="icon-office icon"></span>
+            <span className="icon-office icon"></span>
           </li>
           <li className="item">
             <span className="text">FOR KIDS</span>
-            <span class="icon-kids-room icon"></span>
+            <span className="icon-kids-room icon"></span>
           </li>
           <li className="item">
             <span className="text">KITCHEN</span>
-            <span class="icon-kitchen icon"></span>
+            <span className="icon-kitchen icon"></span>
           </li>
           <li className="item">
             <span className="text">ACCEESORIES</span>
-            <span class="icon-accessories icon"></span>
+            <span className="icon-accessories icon"></span>
           </li>
         </ul>
-        <span className='link'>SHOW ALL CATEGORIES</span>
+        <Link to="/shop">
+          <GoTo cheldern="SHOW ALL CATEGORIES" />
+        </Link>
       </div>
     </div>
   );
