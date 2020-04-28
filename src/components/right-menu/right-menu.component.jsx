@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import GoTo from "../go-to/go-to.component";
+import ShopIcon from "../shop-icon/shop-icon.component";
 
 import "./right-menu.styles.scss";
 
-const RightMenu = () => {
+const RightMenu = ({collection}) => {
   const [hiddenState, setHiddenState] = useState("");
   const [iconState, iconToggleState] = useState("");
 
@@ -22,26 +23,9 @@ const RightMenu = () => {
 
       <div className={`background ${hiddenState}`}>
         <ul className="list">
-          <li className="item">
-            <span className="text">LIVING ROOM</span>
-            <span className="icon-living-room icon"></span>
-          </li>
-          <li className="item">
-            <span className="text">OFFICE</span>
-            <span className="icon-office icon"></span>
-          </li>
-          <li className="item">
-            <span className="text">FOR KIDS</span>
-            <span className="icon-kids-room icon"></span>
-          </li>
-          <li className="item">
-            <span className="text">KITCHEN</span>
-            <span className="icon-kitchen icon"></span>
-          </li>
-          <li className="item">
-            <span className="text">ACCEESORIES</span>
-            <span className="icon-accessories icon"></span>
-          </li>
+          {collection.map(collections => (
+            <ShopIcon key={collections.id} collection={collections} />
+          ))}
         </ul>
         <Link to="/shop">
           <GoTo cheldern="SHOW ALL CATEGORIES" />

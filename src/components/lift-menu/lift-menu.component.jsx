@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import SideMenu from "../side-menu/side-menu.component";
 import BasketIcon from "../basket-icon/basket-icon.component";
@@ -33,7 +34,9 @@ const LeftMenu = () => {
               handelChangeToSignin();
             }}
           ></span>
-          <span className="icon-home icon"></span>
+          <Link to="/">
+            <span className="icon-home icon"></span>
+          </Link>
           <BasketIcon
             handelChange={handelChange}
             handelChangeToBasketMenu={handelChangeToBasketMenu}

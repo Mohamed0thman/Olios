@@ -12,7 +12,7 @@ export default () => (
     useKeyboardArrows={true}
     showThumbs={false}
     showStatus={false}
-    cancelable={false}
+  
     
   >
     <div className="image">
