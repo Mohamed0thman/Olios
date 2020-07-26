@@ -1,0 +1,23 @@
+.search {
+  max-width: 120rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 6% 15% 10% 5%;
+  .form-container {
+    margin-left: 12rem;
+  }
+
+  .items {
+    margin-left: 12rem;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  .text {
+  }
+  .searched-result {
+    margin-left: 12rem;
+    margin-top: 3rem;
+  }
+}

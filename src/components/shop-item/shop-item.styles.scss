@@ -1,193 +1,42 @@
-.item--0 {
+.collection-item {
+  max-height: 350px;
+  border-radius: 12px;
   background-color: white;
+  padding: 1rem;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  flex: 1 1 auto;
+  justify-content: space-between;
   align-items: center;
-
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  position: relative;
 
   .image {
-    width: 15rem;
-    height: 10rem;
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
-  .text-content {
+
+  .collection-footer {
+    width: 100%;
     .heading {
-      font-size: 2rem;
-      font-weight: 400;
+      margin-bottom: 10px;
     }
     .text {
-      font-size: 1.2rem;
+      margin-bottom: 15px;
       font-weight: 400;
-      color: gray;
     }
     .price {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: blue;
-    }
-  }
-}
-.item--1 {
-  background-color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 2;
-
-  .image {
-    width: 35rem;
-    height: 20rem;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .text-content {
-    .heading {
-      font-size: 2.5rem;
-      font-weight: 400;
-    }
-    .text {
       font-size: 1.5rem;
-      font-weight: 400;
-      color: gray;
-      margin-bottom: 3rem;
-    }
-    .price {
-      font-size: 2rem;
-      font-weight: 600;
-      color: blue;
+      font-weight: 900;
+      color: #0023ff;
     }
   }
-}
 
-.item--2 {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
-
-  .image {
-    width: 15rem;
-    height: 10rem;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  .text-content {
-    .heading {
-      font-size: 2rem;
-      font-weight: 400;
-    }
-    .text {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: gray;
-    }
-    .price {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: blue;
-    }
-  }
-}
-
-.item--3 {
-  background-color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  .image {
-    width: 30rem;
-    height: 20rem;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  .text-content {
-    .heading {
-      font-size: 2rem;
-      font-weight: 400;
-    }
-    .text {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: gray;
-      margin-bottom: 2rem;
-    }
-    .price {
-      font-size: 2rem;
-      font-weight: 600;
-      color: blue;
-    }
-  }
-}
-
-.item--4 {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-row-start: 2;
-  grid-row-end: 3;
-
-  .image {
-    width: 15rem;
-    height: 10rem;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}
-.text-content {
-  .heading {
-    font-size: 2rem;
-    font-weight: 400;
-  }
-  .text {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: gray;
-  }
-  .price {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: blue;
+  .image:hover {
+    transform: scale(1.5);
+    transition: all 30s ease-in-out;
   }
 }

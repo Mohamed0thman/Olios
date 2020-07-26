@@ -3,6 +3,7 @@
 }
 
 .group {
+  width: 100%;
   position: relative;
 
   .form-input {
@@ -19,7 +20,6 @@
     &:focus ~ .form-input-label {
       @include active();
     }
-    
   }
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
@@ -39,5 +39,16 @@
     &.active {
       @include active();
     }
+  }
+  .is-search,
+  .is-sign-up {
+    border: none;
+    border-bottom: 1px solid #d8d8d8;
+    background-color: transparent;
+    
+  }
+
+  .is-search {
+    font-size: 6rem;
   }
 }

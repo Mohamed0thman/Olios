@@ -1,17 +1,21 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 import "./shop-item.styles.scss";
 
-const ShopItems = ({ item, size }) => {
-  const { name, imageUrl, price } = item;
+const ShopItems = ({ item, history }) => {
+  const { name, imageUrl, price, link } = item;
 
   return (
-    <div className={`item--${size}`}>
+    <div
+      className="collection-item"
+      onClick={() => history.push(`/Product/${link}`)}
+    >
       <div className="image">
         <img src={imageUrl} alt={name} />
       </div>
-      <div className="text-content">
-        <h3 className="heading">{name}</h3>
+      <div className="collection-footer">
+        <h4 className="heading">{name.toUpperCase()}</h4>
         <p className="text">Lorem ipsum dolor sit amet.</p>
         <span className="price">${price}</span>
       </div>
@@ -19,4 +23,4 @@ const ShopItems = ({ item, size }) => {
   );
 };
 
-export default ShopItems;
+export default withRouter(ShopItems);

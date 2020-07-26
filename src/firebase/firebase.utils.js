@@ -49,6 +49,24 @@ export const addCollectionAndDocuments = async (
   const batch = firestore.batch();
   objectsToAdd.forEach((obj) => {
     const newDocRef = collectionRef.doc();
+
+    batch.set(newDocRef, obj);
+  });
+  return await batch.commit();
+};
+
+export const addSlidersAndDocuments = async (slidersKey, objectsToAdd) => {
+  //add to fireStore
+  const slidersRef = firestore.collection(slidersKey);
+  console.log(slidersRef);
+
+  const batch = firestore.batch();
+  objectsToAdd.forEach((obj) => {
+    const newDocRef = slidersRef.doc();
+    console.log(obj);
+
+    console.log(newDocRef);
+
     batch.set(newDocRef, obj);
   });
   return await batch.commit();
@@ -57,19 +75,31 @@ export const addCollectionAndDocuments = async (
 export const convertCollectionsSnapshotToMap = (collectionsSnapshot) => {
   // get collection from fireStoe
   const transFormedCollection = collectionsSnapshot.docs.map((docSnapshot) => {
-    const { title, items, icon } = docSnapshot.data();
+    const { items } = docSnapshot.data();
 
     return {
-      routeName: encodeURI(title.toLowerCase()),
-      id: docSnapshot.id,
-      title,
-      icon,
       items,
     };
   });
 
   return transFormedCollection.reduce((accumulator, collection) => {
-    accumulator[collection.title.toLowerCase()] = collection;
+    accumulator[collection.items] = collection;
+    return accumulator;
+  }, {});
+};
+
+export const convertSlidersSnapshotToMap = (slidersSnapshot) => {
+  // get collection from fireStoe
+  const transFormedSliders = slidersSnapshot.docs.map((docSnapshot) => {
+    const { sliders } = docSnapshot.data();
+
+    return {
+      sliders,
+    };
+  });
+
+  return transFormedSliders.reduce((accumulator, slider) => {
+    accumulator[slider.sliders] = slider;
     return accumulator;
   }, {});
 };
@@ -82,7 +112,6 @@ export const getCurrentUser = () => {
     }, reject);
   });
 };
-
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 

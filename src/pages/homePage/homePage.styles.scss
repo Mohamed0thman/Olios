@@ -1,6 +1,14 @@
 .home-page {
-  text-align: center;
   width: 100%;
-  position: relative;
-  margin: 0 auto;
+  height: 100vh;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom left, #ffffff, #dddddd);
+  .container {
+    max-width: 120rem;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    @media (max-width: 575.98px) {
+    }
+  }
 }

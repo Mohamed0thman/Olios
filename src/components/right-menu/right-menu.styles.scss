@@ -1,5 +1,4 @@
 .right-menu {
-  width: 8rem;
   .button {
     width: 6rem;
     height: 6rem;
@@ -8,22 +7,26 @@
     box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     position: fixed;
-    right: 65px;
+    right: 40px;
     top: 30px;
-    z-index: 40;
+    z-index: 10000;
+
+    @media (max-width: 575.98px) {
+      right: 30px;
+    }
 
     cursor: pointer;
 
     .icon {
       position: relative;
       margin-top: 3rem;
-      margin-left: 1.9rem;
+      margin-left: 2rem;
 
       &,
       &::before,
       &::after {
         width: 2rem;
-        height: 2.5px;
+        height: 3px;
         background-color: #0023ff;
         display: inline-block;
       }
@@ -37,10 +40,10 @@
       }
 
       &::before {
-        top: -0.5rem;
+        top: -0.6rem;
       }
       &::after {
-        top: 0.5rem;
+        top: 0.6rem;
       }
 
       &.-active {
@@ -76,10 +79,15 @@
     background-color: #ffffff;
     border-radius: 50%;
     position: fixed;
-    right: 65px;
+    right: 40px;
     top: 30px;
     z-index: 20;
     overflow: hidden;
+    z-index: 5000;
+
+    @media (max-width: 575.98px) {
+      right: 30px;
+    }
 
     display: flex;
     flex-direction: column;
@@ -90,10 +98,15 @@
 
     &.-active {
       width: 25rem;
-      height: 100%;
+      height: 100vh;
       right: 0;
       top: 0;
       border-radius: 0;
+
+      @media (max-width: 375.98px) {
+        width: 100%;
+        min-height: 100vh;
+      }
     }
 
     .list {
@@ -105,8 +118,37 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-    }
 
-    
+      .link {
+        width: 100%;
+        text-decoration: none;
+        margin-top: 3rem;
+        color: #d8d8d8;
+        font-weight: 400;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:focus {
+          color: #0023ff;
+          font-weight: 600;
+        }
+
+        &:hover {
+          color: #0023ff;
+          font-weight: 600;
+        }
+
+        .name {
+          font-size: 1.6rem;
+          margin-right: 1rem;
+        }
+
+        .icon {
+          font-size: 3.5rem;
+          text-decoration: none;
+        }
+      }
+    }
   }
 }

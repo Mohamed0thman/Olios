@@ -2,9 +2,19 @@ import React from "react";
 
 import "./form-input.styles.scss";
 
-const FormInput = ({ handleChange, label, ...otherProps }) => (
+const FormInput = ({
+  handleChange,
+  label,
+  isSearch,
+  isSignUp,
+  ...otherProps
+}) => (
   <div className="group">
-    <input className="form-input" onChange={handleChange} {...otherProps} />
+    <input
+      className={`form-input ${isSearch} ${isSignUp}`}
+      onChange={handleChange}
+      {...otherProps}
+    />
     {label ? (
       <label
         className={`${otherProps.value.length ? "active" : ""}

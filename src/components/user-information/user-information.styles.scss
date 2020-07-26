@@ -1,0 +1,55 @@
+.informations {
+  width: 100%;
+  height: 100vh;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .title {
+    margin-bottom: 2rem;
+  }
+
+  .profile {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .user-image {
+      width: 8rem;
+      height: 8rem;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 1px solid black;
+      margin-bottom: 2rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .user-info {
+      .name {
+        margin-bottom: 1rem;
+      }
+      .email {
+      }
+    }
+  }
+
+  .list {
+    width: 100%;
+    list-style: none;
+    margin-bottom: 2rem;
+
+    li {
+      margin-bottom: 1rem;
+      border-bottom: 0.5px #d8d8d8 solid;
+    }
+  }
+}

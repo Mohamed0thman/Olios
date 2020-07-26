@@ -3,10 +3,11 @@
   width: 100%;
   background-color: #0023ff;
   color: #ffff;
-  font-weight: 900;
+  font-size: 1.4rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   padding: 1.3rem 0;
   border: 1px solid #0023ff;
   border-radius: 2px;
@@ -24,7 +25,6 @@
     background-color: #de5246;
     border: 1px solid #de5246;
     color: white;
-    font-size: 1.4rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -39,5 +39,12 @@
       background-color: white;
       color: #de5246;
     }
+  }
+  &.is-add-to {
+    border-radius: 25px;
+    width: 150px;
+    height: 30px;
+    display: flex;
+    align-items: center;
   }
 }

@@ -1,20 +1,23 @@
 .all-categories {
-  width: 100%;
-
   .title {
     font-size: 3.5rem;
     font-weight: 300;
     margin-bottom: 5rem;
   }
   .items {
-    width: 100%;
-    height: 100%;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 18vw);
-    grid-gap: 15px;
+    grid-gap: 20px;
 
-    
+    @media (max-width: 991.98px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 767.98px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 375.98px) {
+      grid-template-columns: 1fr;
+    }
   }
 }

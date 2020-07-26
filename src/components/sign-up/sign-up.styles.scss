@@ -1,0 +1,18 @@
+.signup-form {
+  width: 70%;
+  height: 100%;
+  padding: 10%;
+  margin: 0 auto;
+  text-align: center;
+
+  .title {
+    margin-bottom: 4rem;
+  }
+
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}

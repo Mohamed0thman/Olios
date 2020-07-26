@@ -1,30 +1,36 @@
-import UserActionTypes from "./user.type";
+import  UserActionTypes  from "./user.type";
 
 const INITIAL_STATE = {
   currentUser: null,
-  error: null
+  error: null,
+  hidden: true,
 };
 
 const userReduser = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case UserActionTypes.TOGGLE_LOGIN_HIDDEN:
+      return {
+        ...state,
+        hidden: !state.hidden,
+      };
     case UserActionTypes.SIGN_IN_SUCCESS:
       return {
         ...state,
         currentUser: action.payload,
-        error: null
+        error: null,
       };
     case UserActionTypes.SIGN_OUT_SUCCESS:
       return {
         ...state,
         currentUser: null,
-        error: null
+        error: null,
       };
     case UserActionTypes.SIGN_IN_FAILURE:
     case UserActionTypes.SIGN_OUT_FAILURE:
     case UserActionTypes.SIGN_UP_FAILURE:
       return {
         ...state,
-        error: action.payload
+        error: action.payload,
       };
     default:
       return state;

@@ -1,0 +1,23 @@
+.Pagination {
+  width: 100%;
+  list-style-type: none;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .page-item {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 2.5;
+    background-color: white;
+    color: #000;
+    margin-right: 1rem;
+    list-style-type: none;
+
+    .number {
+      text-decoration: none;
+    }
+  }
+}

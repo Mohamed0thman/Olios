@@ -1,35 +1,16 @@
 .side-menu {
   width: 30rem;
-
+  height: 100vh;
   background-color: #ffffff;
   margin-left: 0.5rem;
-  margin-right: 2rem;
   position: relative;
+  overflow: hidden;
 
-  .button {
-    width: 6rem;
-    height: 6rem;
-    background-color: #efefef;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    right: -30px;
-
-    cursor: pointer;
+  @media (max-width: 575.98px) {
+    width: 50vw;
   }
 
-  .icon {
-    position: relative;
-    overflow: hidden;
-
-    &::after {
-      content: "\2039";
-      font-size: 6rem;
-      font-weight: bold;
-      display: inline-block;
-      position: absolute;
-      top: -12px;
-      left: 16px;
-    }
+  @media (max-width: 375.98px) {
+    width: 80vw;
   }
 }
