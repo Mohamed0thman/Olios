@@ -98,14 +98,13 @@
 
     &.-active {
       width: 25rem;
-      height: 100vh;
+      height: 100%;
       right: 0;
       top: 0;
       border-radius: 0;
 
-      @media (max-width: 375.98px) {
+      @media (max-width: 425px) {
         width: 100%;
-        min-height: 100vh;
       }
     }
 

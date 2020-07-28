@@ -45,10 +45,16 @@
     border: none;
     border-bottom: 1px solid #d8d8d8;
     background-color: transparent;
-    
   }
 
   .is-search {
     font-size: 6rem;
+
+    @media (max-width: 575.98px) {
+      font-size: 4rem;
+    }
+    @media (max-width: 375.98px) {
+      font-size: 2rem;
+    }
   }
 }

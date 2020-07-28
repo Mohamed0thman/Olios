@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route } from "react-router-dom";
+import { Route} from "react-router-dom";
 import { connect } from "react-redux";
 
 import { fetchCollectionsStart } from "../../redux/shop/shop.action";
@@ -16,11 +16,17 @@ const Shop = ({ match, fetchCollectionsStart }) => {
 
   return (
     <div className="shop">
-      <Route exact path={`${match.path}`} component={AllCategoriesContainer} />
-      <Route
-        path={`${match.path}/:collectionType`}
-        component={SelectedCategoryContainer}
-      />
+     
+        <Route
+          exact
+          path={`${match.path}`}
+          component={AllCategoriesContainer}
+        />
+        <Route
+          path={`${match.path}/:collectionType`}
+          component={SelectedCategoryContainer}
+        />
+     
     </div>
   );
 };

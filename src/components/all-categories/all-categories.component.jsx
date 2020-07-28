@@ -17,7 +17,7 @@ const AllCategories = ({ collection, match }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, SetPostsPerPage] = useState(12);
+  const [postsPerPage, SetPostsPerPage] = useState(25);
 
   useEffect(() => {
     const getItems = async () => {
