@@ -238,14 +238,16 @@
 .carousel .control-dots {
   position: absolute;
   bottom: 20px;
-  right: 20px;
+  right: 80px;
   text-align: center;
 }
-@media (min-width: 960px) {
+
+@media (max-width: 575.98px) {
   .carousel .control-dots {
-    bottom: 20px;
+    position: static;
   }
 }
+
 .carousel .control-dots .dot {
   -webkit-transition: opacity 0.25s ease-in;
   -moz-transition: opacity 0.25s ease-in;

@@ -4,8 +4,8 @@ import "./header.styles.scss";
 
 const Header = () => (
   <div className="home-header">
-    <div className="container">
-      <div className="background-text">NEWEST</div>
+    <div className="text-background">
+      <img src="https://i.ibb.co/3YLK9xx/NEWEST.png" alt="" />
       <div className="up-text">
         <h1 className="heading">OLIOS</h1>
         <h3 className="text">NEWEST FURNITURE SHOP SITE</h3>
