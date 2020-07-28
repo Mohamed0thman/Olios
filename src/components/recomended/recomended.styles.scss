@@ -7,7 +7,7 @@
   .arrow {
     cursor: pointer;
 
-    @media (max-width: 375.98px) {
+    @media (max-width: 425px) {
       margin: 4rem;
       transform: rotate(90deg);
     }
@@ -18,12 +18,21 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 80px;
 
-    @media (max-width: 375.98px) {
+    @media (max-width: 991.98px) {
+      grid-gap: 10px;
+    }
+
+    @media (max-width: 767.98px) {
+      grid-gap: 20px;
+    }
+
+    @media (max-width: 425px) {
       grid-template-columns: 1fr;
+      grid-gap: 40px;
     }
   }
 
-  @media (max-width: 375.98px) {
+  @media (max-width: 425px) {
     flex-direction: column;
   }
 }
