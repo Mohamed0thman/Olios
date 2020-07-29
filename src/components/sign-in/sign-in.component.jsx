@@ -60,7 +60,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
           <CustomButton type="submit"> SIGN IN </CustomButton>
           <CustomButton
             type="button"
-            isGoogleSignIn="google-sign-in"
+            isGoogleSignIn
             onClick={googleSignInStart}
           >
             <span className="icon-google google"></span>

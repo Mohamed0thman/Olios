@@ -101,3 +101,15 @@
 .icon-google:before {
   content: "\ea88";
 }
+.icon-minus-solid:before {
+  content: "\e912";
+}
+.icon-add-solid:before {
+  content: "\e913";
+}
+.icon-arrow-outline-right:before {
+  content: "\e910";
+}
+.icon-arrow-outline-left:before {
+  content: "\e911";
+}

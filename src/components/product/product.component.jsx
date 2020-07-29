@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import useLocalStorage from "./use-local-storage";
 
 import ReactImageMagnify from "react-image-magnify";
 
@@ -30,13 +31,21 @@ const Product = ({ item, collection, addItemToCart }) => {
     finalPrice: finalPrice,
     quantity: 1,
   });
-  console.log(addToItems);
+  const [likeNum, setLikeNum] = useLocalStorage(like, like);
+  const [solidHeart, setSolidHeart] = useLocalStorage("-outlined", "-outlined");
+  const [solidPlus, setSolidPlus] = useState("outline");
+  const [solidMinus, setSolidMinus] = useState("outline");
 
   const items = collection.map((collections) =>
     collections.items.filter(
       (item) => item.recomended === recomended && item.name !== name
     )
   );
+
+  const handelChangeHeart = () => {
+    setSolidHeart(solidHeart === "-outlined" ? "" : "-outlined");
+    setLikeNum(likeNum === like ? likeNum + 1 : like);
+  };
 
   const handelChangeQuantity = (event) => {
     const { name, value } = event.target;
@@ -59,12 +68,18 @@ const Product = ({ item, collection, addItemToCart }) => {
     setScaleImage(scaleImage === 1 ? scaleImage : scaleImage - 1);
   };
 
+  const handelChangePlus = () =>
+    setSolidPlus(solidPlus === "outline" ? "solid" : "outline");
+
+  const handleChangeMinus = () =>
+    setSolidMinus(solidMinus === "outline" ? "solid" : "outline");
+
   return (
     <div className="product">
       <div className="left">
-        <div className="heart">
-          <span className="heart-num">{like}</span>
-          <span className="icon-heart-outlined heart-icon"></span>
+        <div className="heart" onClick={handelChangeHeart}>
+          <span className="heart-num">{likeNum}</span>
+          <span className={`icon-heart${solidHeart} heart-icon`}></span>
         </div>
         <div className="image-container">
           <ReactImageMagnify
@@ -90,12 +105,16 @@ const Product = ({ item, collection, addItemToCart }) => {
 
         <div className="add-and-minus">
           <span
-            className="icon-add-outline"
+            className={`icon-add-${solidPlus} add`}
             onClick={handelChangeAddScale}
+            onMouseUp={handelChangePlus}
+            onMouseDown={handelChangePlus}
           ></span>
           <span
-            className="icon-minus-outline"
+            className={`icon-minus-${solidMinus} minus`}
             onClick={handelChangeMinusScale}
+            onMouseUp={handleChangeMinus}
+            onMouseDown={handleChangeMinus}
           ></span>
         </div>
       </div>
@@ -139,9 +158,7 @@ const Product = ({ item, collection, addItemToCart }) => {
                       max={Piece}
                       onChange={handelChangeQuantity}
                     ></input>
-                    <CustomButton isAddTo="is-add-to" type="submit">
-                      ADD TO CARD
-                    </CustomButton>
+                    <CustomButton inverted>ADD TO CARD</CustomButton>
                   </form>
                 </div>
               </div>

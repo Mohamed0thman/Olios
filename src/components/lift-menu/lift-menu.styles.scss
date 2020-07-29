@@ -2,22 +2,20 @@
   width: 8rem;
   min-height: 100vh;
   margin-right: 1rem;
-  
   .menu {
-    background-color: #ffffff;
-    width: 8rem;
-    min-height: 100%;
+    height: 100%;
     text-align: center;
     position: fixed;
     z-index: 1000;
     display: flex;
 
     .menu-container {
+      background-color: #ffffff;
+      width: 100%;
+      height: 100%;
       padding: 1rem 2rem;
-      margin-right: 1rem;
 
       .logo {
-        width: 3rem;
         margin-top: 1rem;
       }
 
@@ -44,6 +42,7 @@
       }
     }
     .side-container {
+      box-shadow: 1rem 1rem 2rem rgba($color: #000000, $alpha: 0.1);
     }
   }
 }

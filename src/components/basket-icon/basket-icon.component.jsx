@@ -7,7 +7,8 @@ import { toggleCartHidden } from "../../redux/cart/cart-action";
 import { selectLoginHidden } from "../../redux/user/user-selector";
 import { toggleLoginHidden } from "../../redux/user/user-action";
 
-import "./basket-icon.styles.scss";
+
+import { BasketContainer, ItemCount, OptionDiv } from "./basket-icon.styles";
 
 const BasketIcon = ({
   itemCount,
@@ -19,16 +20,19 @@ const BasketIcon = ({
   const handelChange = () =>
     hiddenLogin === false ? toggleLoginHidden() : null;
   return (
-    <div
-      className="basket-icon"
+    <BasketContainer
       onClick={() => {
         handelChange();
         toggleCartHidden();
       }}
     >
-      <span className="icon-basket icon"></span>
-      {itemCount === 0 ? "" : <span className="item-count">{itemCount}</span>}
-    </div>
+      <OptionDiv className="icon-basket "></OptionDiv>
+      {itemCount === 0 ? (
+        ""
+      ) : (
+        <ItemCount>{itemCount < 100 ? itemCount : 99}</ItemCount>
+      )}
+    </BasketContainer>
   );
 };
 

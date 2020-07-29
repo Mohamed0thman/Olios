@@ -45,7 +45,7 @@ const SignUp = ({ signUpStart }) => {
           name="displayName"
           value={displayName}
           onChange={handleChange}
-          placeHolder="Name"
+          placeholder="Name"
           required
           isSignUp="is-sign-up"
         />
@@ -54,7 +54,7 @@ const SignUp = ({ signUpStart }) => {
           name="email"
           value={email}
           onChange={handleChange}
-          placeHolder="Email"
+          placeholder="Email"
           required
           isSignUp="is-sign-up"
         />
@@ -64,7 +64,7 @@ const SignUp = ({ signUpStart }) => {
           name="password"
           value={password}
           onChange={handleChange}
-          placeHolder="Password"
+          placeholder="Password"
           required
           isSignUp="is-sign-up"
         />
@@ -74,7 +74,7 @@ const SignUp = ({ signUpStart }) => {
           name="confirmPassword"
           value={confirmPassword}
           onChange={handleChange}
-          placeHolder="Confirm Password"
+          placeholder="Confirm Password"
           required
           isSignUp="is-sign-up"
         />

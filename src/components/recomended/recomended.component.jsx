@@ -34,18 +34,6 @@ const Recomended = ({ items }) => {
     return <h2>loading .......</h2>;
   }
 
-  const renderArrow = () => {
-    let arrow;
-    if (currentPage === 1 && pages > 1) {
-      arrow = "<";
-    } else if (currentPage < pages) {
-      arrow = "<";
-      arrow = ">";
-    } else if (currentPage === pages && pages > 1) {
-      arrow = ">";
-    }
-    return arrow;
-  };
 
   return (
     <div className="recomended">
