@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -25,11 +25,17 @@ const LeftMenu = ({
   currentUser,
 }) => {
   const handelChange = () => (hiddenCart === false ? toggleCartHidden() : null);
+  const handelClose = () => {
+    return (
+      hiddenCart === false ? toggleCartHidden() : null,
+      hiddenLogin === false ? toggleLoginHidden() : null
+    );
+  };
 
   return (
     <div className="left-menu">
       <div className="menu">
-        <div className='menu-container'>
+        <div className="menu-container">
           <Logo className="logo" />
           <div className="icons-content">
             {currentUser ? (
@@ -49,11 +55,11 @@ const LeftMenu = ({
                 }}
               ></span>
             )}
-            <Link to="/" className="link">
+            <Link to="/" onClick={handelClose}>
               <span className="icon-home icon"></span>
             </Link>
             <BasketIcon />
-            <Link to="/search" className="link">
+            <Link to="/search" onClick={handelClose}>
               <span className="icon-search icon"></span>
             </Link>
           </div>

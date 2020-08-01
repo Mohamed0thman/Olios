@@ -8,8 +8,8 @@ const Recomended = ({ items }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, SetPostsPerPage] = useState(3);
-  const [result, setResult] = useState(items.length);
+  const [postsPerPage] = useState(3);
+  const [result] = useState(items.length);
   useEffect(() => {
     const getItems = async () => {
       setLoading(true);
@@ -27,47 +27,43 @@ const Recomended = ({ items }) => {
 
   const pages = Math.ceil(result / postsPerPage);
 
-
-  //   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   if (loading) {
     return <h2>loading .......</h2>;
   }
 
-
   return (
     <div className="recomended">
       <span
-        className="arrow "
+        className={`arrow  ${
+          currentPage === pages && pages > 1
+            ? "icon-arrow-outline-left "
+            : currentPage < pages && currentPage !== 1
+            ? "icon-arrow-outline-left "
+            : null
+        }`}
         onClick={() => {
           setCurrentPage(currentPage - 1);
         }}
-      >
-        {currentPage === pages && pages > 1
-          ? "<"
-          : currentPage < pages && currentPage !== 1
-          ? "<"
-          : null}
-
-        {/* {currentPosts.length === 3 ? "<" : null}
-        &larr; */}
-      </span>
+      ></span>
       <div className="list">
         {currentPosts.map((item) => (
-          <RecomendedItem key={item.id} items={item} />
+          <RecomendedItem
+            key={item.id}
+            items={item}
+            onClick={window.scrollTo(0, 0)}
+          />
         ))}
       </div>
       <span
-        className="arrow"
+        className={` arrow ${
+          (currentPage === 1 && pages > 1) || currentPage < pages
+            ? "icon-arrow-outline-right"
+            : null
+        }`}
         onClick={() => {
           setCurrentPage(currentPage + 1);
         }}
-      >
-        {(currentPage === 1 && pages > 1) || currentPage < pages ? ">" : null}
-
-        {/* {currentPosts.length < 3 ? ">" : null}
-        &rarr; */}
-      </span>
+      ></span>
     </div>
   );
 };

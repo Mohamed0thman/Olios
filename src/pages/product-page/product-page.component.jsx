@@ -13,19 +13,16 @@ const ProductPage = ({ match, collection, fetchCollectionsStart }) => {
   useEffect(() => {
     fetchCollectionsStart();
   }, [fetchCollectionsStart]);
-
-  console.log(match);
   const items = collection.map((collections) =>
-    collections.items.filter((item) => item.link === match.params.ProductLink)
+    collections.filter((item) => item.link === match.params.ProductLink)
   );
-  setTimeout(() => console.log(items));
-  // const add = item.push({ quantity: 1 });
-  // console.log(add);
+
+  console.log(items);
 
   return (
     <div className="product-page">
       {items.map((item) =>
-        item.map((item, index) => (
+        item.map((item) => (
           <Product
             key={item.id}
             item={item}

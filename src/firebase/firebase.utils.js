@@ -76,32 +76,18 @@ export const convertCollectionsSnapshotToMap = (collectionsSnapshot) => {
   // get collection from fireStoe
   const transFormedCollection = collectionsSnapshot.docs.map((docSnapshot) => {
     const { items } = docSnapshot.data();
-
-    return {
-      items,
-    };
+    return items;
   });
-
-  return transFormedCollection.reduce((accumulator, collection) => {
-    accumulator[collection.items] = collection;
-    return accumulator;
-  }, {});
+  return transFormedCollection;
 };
 
 export const convertSlidersSnapshotToMap = (slidersSnapshot) => {
   // get collection from fireStoe
   const transFormedSliders = slidersSnapshot.docs.map((docSnapshot) => {
     const { sliders } = docSnapshot.data();
-
-    return {
-      sliders,
-    };
+    return sliders;
   });
-
-  return transFormedSliders.reduce((accumulator, slider) => {
-    accumulator[slider.sliders] = slider;
-    return accumulator;
-  }, {});
+  return transFormedSliders;
 };
 
 export const getCurrentUser = () => {

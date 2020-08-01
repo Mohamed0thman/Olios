@@ -11,8 +11,6 @@ import "./slider.style.css";
 import "./slider.styles.scss";
 
 const Slider = ({ slider }) => {
-  const sliders = slider.map((sliders) => sliders.sliders.map((s) => s));
-  console.log(sliders);
   return (
     <div className="slider-container">
       <Carousel
@@ -22,7 +20,9 @@ const Slider = ({ slider }) => {
         showThumbs={false}
         showStatus={false}
       >
-        {sliders.map((s) => s.map((s) => <SlidersItem item={s} key={s.id} />))}
+        {slider.map((slid) =>
+          slid.map((s) => <SlidersItem item={s} key={s.id} />)
+        )}
       </Carousel>
     </div>
   );

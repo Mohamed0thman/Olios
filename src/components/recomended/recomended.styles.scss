@@ -5,7 +5,12 @@
   justify-content: center;
 
   .arrow {
+    color: #0023ff;
     cursor: pointer;
+
+    &:active {
+      font-weight: 900;
+    }
 
     @media (max-width: 425px) {
       margin: 4rem;
@@ -16,7 +21,7 @@
   .list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 80px;
+    grid-gap: 60px;
 
     @media (max-width: 991.98px) {
       grid-gap: 10px;

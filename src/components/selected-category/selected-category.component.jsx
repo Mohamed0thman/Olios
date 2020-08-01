@@ -10,26 +10,20 @@ import Pagination from "../pagination/pagination.component";
 import "./selected-category.styles.scss";
 
 const SelectedCategory = ({ match, collection }) => {
-  // const setNumber = parseInt(match.params.number);
-
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, SetPostsPerPage] = useState(8);
+  const [postsPerPage] = useState(8);
 
-  // // const items = collection.map((collections) =>
-  // //   collections.items.filter((item) => item.url === match.params.collectionType)
-  // // );
-  // console.log(items);
+  console.log(collection);
 
   useEffect(() => {
     const getItems = async () => {
       setLoading(true);
       const items = collection.map((collections) =>
-        collections.items.filter(
-          (item) => item.url === match.params.collectionType
-        )
+        collections.filter((item) => item.url === match.params.collectionType)
       );
+      console.log(items);
       setPosts(items[0]);
       setLoading(false);
     };

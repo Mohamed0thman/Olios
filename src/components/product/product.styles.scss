@@ -253,25 +253,25 @@
       background-color: white;
       height: 16rem;
       display: flex;
+      justify-content: center;
+      align-items: center;
       position: absolute;
       bottom: 0;
 
       @media (max-width: 767.98px) {
         position: static;
         height: 100%;
-        //padding: 2rem 5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
       }
 
       .title {
         font-weight: 300;
         color: gray;
-        transform-origin: 0 0;
+        // transform-origin: 0 0;
         transform: rotate(90deg);
-        margin-left: 3.5rem;
-        margin-top: 2rem;
 
         @media (max-width: 767.98px) {
           transform: rotate(0);

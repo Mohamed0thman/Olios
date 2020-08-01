@@ -31,12 +31,6 @@ const invertedButtonStyleds = css`
   }
 `;
 
-const googleIcone = styled.span`
-  margin-right: 0px;
-  font-size: 2.5rem;
-  margin-right: 14px;
-`;
-
 const googleSignInStyles = css`
   background-color: #de5246;
   border: 1px solid #de5246;

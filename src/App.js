@@ -15,13 +15,9 @@ import LeftMenu from "./components/lift-menu/lift-menu.component";
 import RightMenu from "./components/right-menu/right-menu.component";
 
 import { checkUserSession } from "./redux/user/user-action";
-import { fetchCollectionsStart } from "./redux/shop/shop.action";
-import { fetchSlidersStart } from "./redux/directory/directory.action";
 
-import { setCurrentUser } from "./redux/user/user-action";
 import { selectCurrentUser } from "./redux/user/user-selector";
 import { selectCollectionsForPreview } from "./redux/shop/shop.selectors";
-import { selectSlidersForPreview } from "./redux/directory/directory.selectors";
 
 import "./style.css";
 import "./App.css";
@@ -30,14 +26,6 @@ const App = ({ checkUserSession, currentUser, fetchSlidersStart }) => {
   useEffect(() => {
     checkUserSession();
   }, [checkUserSession]);
-
-  // useEffect(() => {
-  //   fetchCollectionsStart();
-  // }, [fetchCollectionsStart]);
-
-  // useEffect(() => {
-  //   fetchSlidersStart();
-  // }, [fetchSlidersStart]);
 
   return (
     <div className="app">
@@ -67,8 +55,6 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = (dispatch) => ({
   checkUserSession: () => dispatch(checkUserSession()),
-  // fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
-  // fetchSlidersStart: () => dispatch(fetchSlidersStart()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

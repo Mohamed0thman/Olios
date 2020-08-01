@@ -1,31 +1,54 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
 import GoTo from "../go-to/go-to.component";
 
+import { selectCartHidden } from "../../redux/cart/cart-selector";
+import { selectLoginHidden } from "../../redux/user/user-selector";
+import { toggleLoginHidden } from "../../redux/user/user-action";
+import { toggleCartHidden } from "../../redux/cart/cart-action";
+
 import "./right-menu.styles.scss";
 
-const RightMenu = () => {
-  const [hiddenState, setHiddenState] = useState("");
-  const [iconState, iconToggleState] = useState("");
-  const [selected, setSelected] = useState("");
+const RightMenu = ({
+  hiddenCart,
+  hiddenLogin,
+  toggleLoginHidden,
+  toggleCartHidden,
+}) => {
+  const [hiddenState, setHiddenState] = useState(false);
 
-  const toggle = () => {
-    setHiddenState(hiddenState === "" ? "-active" : "");
-    iconToggleState(iconState === "" ? "-active" : "");
+  const toggle = () =>
+    setHiddenState(hiddenState === false ? "-active" : false);
+
+  const handelClose = () => {
+    if (window.innerWidth <= 425) {
+      return (
+        hiddenCart === false ? toggleCartHidden() : null,
+        hiddenLogin === false ? toggleLoginHidden() : null
+      );
+    }
   };
 
   return (
     <div className="right-menu">
-      <div className="button" onClick={toggle}>
-        <span className={`icon ${iconState}`}>&nbsp;</span>
+      <div
+        className="button"
+        onClick={() => {
+          toggle();
+          handelClose();
+        }}
+      >
+        <span className={`icon ${hiddenState}`}>&nbsp;</span>
       </div>
 
       <div className={`background ${hiddenState}`}>
-        <div className="list">
+        <div className={`list ${hiddenState}`}>
           <Link
             to="/shop/living-room"
-            className={`link ${selected} `}
+            className="link"
             onClick={() => (window.innerWidth <= 425 ? toggle() : null)}
           >
             <span className="name">LIVING ROOM</span>
@@ -82,4 +105,15 @@ const RightMenu = () => {
     </div>
   );
 };
-export default RightMenu;
+
+const mapDispatchToProps = (dispatch) => ({
+  toggleLoginHidden: () => dispatch(toggleLoginHidden()),
+  toggleCartHidden: () => dispatch(toggleCartHidden()),
+});
+
+const mapStatetToProps = createStructuredSelector({
+  hiddenCart: selectCartHidden,
+  hiddenLogin: selectLoginHidden,
+});
+
+export default connect(mapStatetToProps, mapDispatchToProps)(RightMenu);

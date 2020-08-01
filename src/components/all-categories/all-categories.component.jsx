@@ -10,25 +10,20 @@ import Pagination from "../pagination/pagination.component";
 import "./all-categories.styles.scss";
 
 const AllCategories = ({ collection, match }) => {
-  // setTimeout(() => console.log(collection), 2000);
-
-  const setNumber = parseInt(match.params.number);
-
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, SetPostsPerPage] = useState(25);
+  const [postsPerPage] = useState(25);
 
   useEffect(() => {
     const getItems = async () => {
       setLoading(true);
-      const item = collection.map((collections) => collections.items);
-      console.log(item);
+      const item = collection.map((collections) => collections);
       setPosts(item[0]);
       setLoading(false);
     };
     getItems();
-  }, []);
+  }, [collection]);
 
   const indexOfLastPost = currentPage * postsPerPage;
 

@@ -7,7 +7,6 @@ import { toggleCartHidden } from "../../redux/cart/cart-action";
 import { selectLoginHidden } from "../../redux/user/user-selector";
 import { toggleLoginHidden } from "../../redux/user/user-action";
 
-
 import { BasketContainer, ItemCount, OptionDiv } from "./basket-icon.styles";
 
 const BasketIcon = ({
@@ -16,7 +15,6 @@ const BasketIcon = ({
   hiddenLogin,
   toggleLoginHidden,
 }) => {
-  console.log(hiddenLogin);
   const handelChange = () =>
     hiddenLogin === false ? toggleLoginHidden() : null;
   return (

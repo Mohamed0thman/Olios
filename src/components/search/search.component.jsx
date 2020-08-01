@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -15,7 +15,7 @@ const Search = ({ collection }) => {
   const [items, setItems] = useState([]);
 
   const item = collection.map((items) =>
-    items.items.filter((item) =>
+    items.filter((item) =>
       item.name.toLowerCase().includes(search.toLowerCase())
     )
   );
@@ -45,9 +45,7 @@ const Search = ({ collection }) => {
           ? items.map((items) =>
               items.map((item) => <SearchItem key={item.id} item={item} />)
             )
-          : ""
-            // <p className="text">No items found</p>
-        }
+          : ""}
       </div>
       <div className="searched-result">
         <span>{search === "" ? 0 : items.map((item) => item.length)} </span>

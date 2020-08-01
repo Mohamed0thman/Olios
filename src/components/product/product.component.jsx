@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import useLocalStorage from "./use-local-storage";
 
 import ReactImageMagnify from "react-image-magnify";
 
@@ -24,6 +23,7 @@ const Product = ({ item, collection, addItemToCart }) => {
     discount,
     Piece,
   } = item;
+
   const [scaleImage, setScaleImage] = useState(1);
   const finalPrice = Math.ceil(price - price * (discount / 100));
   const [addToItems, setAddToItems] = useState({
@@ -31,20 +31,20 @@ const Product = ({ item, collection, addItemToCart }) => {
     finalPrice: finalPrice,
     quantity: 1,
   });
-  const [likeNum, setLikeNum] = useLocalStorage(like, like);
-  const [solidHeart, setSolidHeart] = useLocalStorage("-outlined", "-outlined");
+  const [likeNum, setLikeNum] = useState(like);
+  const [solidHeart, setSolidHeart] = useState("-outlined");
   const [solidPlus, setSolidPlus] = useState("outline");
   const [solidMinus, setSolidMinus] = useState("outline");
 
   const items = collection.map((collections) =>
-    collections.items.filter(
+    collections.filter(
       (item) => item.recomended === recomended && item.name !== name
     )
   );
 
   const handelChangeHeart = () => {
     setSolidHeart(solidHeart === "-outlined" ? "" : "-outlined");
-    setLikeNum(likeNum === like ? likeNum + 1 : like);
+    setLikeNum(likeNum === like ? like + 1 : like);
   };
 
   const handelChangeQuantity = (event) => {

@@ -5,7 +5,6 @@ import "./shop-item.styles.scss";
 
 const ShopItems = ({ item, history }) => {
   const { name, imageUrl, price, link } = item;
-
   return (
     <div
       className="collection-item"

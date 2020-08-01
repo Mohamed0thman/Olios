@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import "./search-item.styles.scss";
 
 const SearchItem = ({ item, history }) => {
-  const { name, imageUrl, price, link } = item;
+  const { name, imageUrl, link } = item;
 
   console.log(item);
 
