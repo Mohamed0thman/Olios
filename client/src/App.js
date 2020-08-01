@@ -45,7 +45,7 @@ const App = ({ checkUserSession, currentUser, fetchSlidersStart }) => {
             <Route path="/shop" component={Shop} />
             <Route path="/Product/:ProductLink" component={ProductPage} />
             <Route path="/checkout" component={CheckoutPage} />
-          
+            <Route path="/search" component={SearchPage} />
             <Route
               exact
               path="/signup"
