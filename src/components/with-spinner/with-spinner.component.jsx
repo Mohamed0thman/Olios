@@ -1,20 +1,10 @@
 import React from "react";
 
-import { ReactComponent as Logo } from "../../assets/logo.svg";
+import Spinner from "../spinner/spinner.component";
 
-import "./with-spinner.styles.scss";
 
-const WithSpinner = (WrappedComponent) => {
-  const spinner = ({ isLoading, ...otherProps }) => {
-    return isLoading ? (
-      <div className="with-spinner">
-        <Logo className="logo" />
-      </div>
-    ) : (
-      <WrappedComponent {...otherProps} />
-    );
-  };
-  return spinner;
+const WithSpinner = (WrappedComponent) => ({ isLoading, ...otherProps }) => {
+  return isLoading ? <Spinner /> : <WrappedComponent {...otherProps} />;
 };
 
 export default WithSpinner;

@@ -116,4 +116,6 @@ const mapStatetToProps = createStructuredSelector({
   hiddenLogin: selectLoginHidden,
 });
 
-export default connect(mapStatetToProps, mapDispatchToProps)(RightMenu);
+export default React.memo(
+  connect(mapStatetToProps, mapDispatchToProps)(RightMenu)
+);

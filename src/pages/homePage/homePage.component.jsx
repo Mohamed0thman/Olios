@@ -12,6 +12,7 @@ const HomePage = ({ fetchSlidersStart }) => {
   useEffect(() => {
     fetchSlidersStart();
   }, [fetchSlidersStart]);
+
   return (
     <div className="home-page">
       <div className="container">

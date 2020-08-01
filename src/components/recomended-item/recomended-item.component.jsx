@@ -17,4 +17,4 @@ const RecomendedItem = ({ items }) => {
     </div>
   );
 };
-export default RecomendedItem;
+export default React.memo(RecomendedItem);

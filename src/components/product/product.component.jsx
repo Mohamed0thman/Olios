@@ -182,4 +182,4 @@ const mapDispatchToProps = (dispatch) => ({
   removeItem: (item) => dispatch(removeItem(item)),
 });
 
-export default connect(null, mapDispatchToProps)(Product);
+export default React.memo(connect(null, mapDispatchToProps)(Product));
