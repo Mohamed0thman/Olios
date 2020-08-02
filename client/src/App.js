@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import LeftMenu from "./components/lift-menu/lift-menu.component";
-import RightMenu from "./components/right-menu/right-menu.component";
+import Navigation from "./components/navigation/navigation.component.jsx";
 
 import Spinner from "./components/spinner/spinner.component.jsx";
 import ErrorBoundary from "./components/error-boundary/error-boundary.component";
@@ -56,7 +56,7 @@ const App = ({ checkUserSession, currentUser, fetchSlidersStart }) => {
           </Suspense>
         </ErrorBoundary>
       </Switch>
-      <RightMenu />
+      <Navigation />
     </div>
   );
 };

@@ -15,15 +15,12 @@ const SelectedCategory = ({ match, collection }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(8);
 
-  console.log(collection);
-
   useEffect(() => {
     const getItems = async () => {
       setLoading(true);
       const items = collection.map((collections) =>
         collections.filter((item) => item.url === match.params.collectionType)
       );
-      console.log(items);
       setPosts(items[0]);
       setLoading(false);
     };

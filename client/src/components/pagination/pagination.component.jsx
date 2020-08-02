@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./pagination.styles.scss";
 
-const Pagination = ({ postsPerPage, totalPosts, paginate, match }) => {
-  // const setNumber = parseInt(link.params.number);
-
+const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
