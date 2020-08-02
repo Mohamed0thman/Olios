@@ -22,7 +22,6 @@ const HomePage = ({ fetchSlidersStart }) => {
     </div>
   );
 };
-
 const mapDispatchToProps = (dispatch) => ({
   fetchSlidersStart: () => dispatch(fetchSlidersStart()),
 });
