@@ -16,6 +16,8 @@ const invertedButtonStyleds = css`
   border-radius: 25px;
   width: 150px;
   height: 30px;
+  margin: 0;
+
   display: flex;
   align-items: center;
   background-color: #0023ff;
@@ -28,6 +30,8 @@ const invertedButtonStyleds = css`
     border: 1px solid #0023ff;
   }
 
+  @media (max-width: 425px) {
+    margin: 2rem 0;
   }
 `;
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -41,7 +41,6 @@ const Product = ({ item, collection, addItemToCart }) => {
       (item) => item.recomended === recomended && item.name !== name
     )
   );
-
   const handelChangeHeart = () => {
     setSolidHeart(solidHeart === "-outlined" ? "" : "-outlined");
     setLikeNum(likeNum === like ? like + 1 : like);
@@ -58,7 +57,6 @@ const Product = ({ item, collection, addItemToCart }) => {
 
     setAddToItems({ ...addToItems, finalPrice: finalPrice });
     addItemToCart(addToItems);
-    console.log(addToItems);
   };
 
   const handelChangeAddScale = () => {
@@ -92,7 +90,7 @@ const Product = ({ item, collection, addItemToCart }) => {
                 alt: name,
                 isFluidWidth: true,
                 src: imageUrl,
-                imageStyle: {},
+                width: window.width <=  767.98 ? 200 : 900,
               },
               largeImage: {
                 src: imageUrl,
