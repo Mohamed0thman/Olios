@@ -24,6 +24,7 @@ const Product = ({ item, collection, addItemToCart }) => {
     discount,
     Piece,
   } = item;
+  
   const [likeNum, setLikeNum] = useState({ likes: like, icon: "-outlined" });
 
   useEffect(() => {
