@@ -6,19 +6,19 @@ const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
   const publishableKey = "pk_test_BFHIkQb9wGxwolmmXv9aEoQB00sW3ge36w";
 
-  const onToken = token => {
+  const onToken = (token) => {
     axios({
       url: "payment",
       method: "post",
       data: {
         amount: priceForStripe,
-        token
-      }
+        token,
+      },
     })
-      .then(response => {
+      .then((response) => {
         alert("payment successful");
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("payment error: ", JSON.parse(error));
         alert(
           "there was an issue with your payment. please sure you use the provided credit cart"
@@ -29,7 +29,7 @@ const StripeCheckoutButton = ({ price }) => {
   return (
     <StripeCheckout
       label="Pay Now"
-      name="CRWN Clothing ltb."
+      name="OLIOS Furniture ltb."
       billingAddress
       shippingAddress
       image="https://i.ibb.co/VYrFFJb/LOGO.png"

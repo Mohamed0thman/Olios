@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -13,6 +13,7 @@ import "./product.styles.scss";
 
 const Product = ({ item, collection, addItemToCart }) => {
   const {
+    id,
     name,
     imageUrl,
     price,
@@ -23,6 +24,35 @@ const Product = ({ item, collection, addItemToCart }) => {
     discount,
     Piece,
   } = item;
+  const [likeNum, setLikeNum] = useState({ likes: like, icon: "-outlined" });
+
+  useEffect(() => {
+    const data = localStorage.getItem(id);
+    if (data) {
+      setLikeNum(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(id, JSON.stringify(likeNum));
+  });
+
+  const handelChangeHeart = () => {
+    const { likes, icon } = likeNum;
+    setLikeNum(() => {
+      if (likes === like && icon === "-outlined") {
+        return {
+          likes: like + 1,
+          icon: "",
+        };
+      } else {
+        return {
+          likes: like,
+          icon: "-outlined",
+        };
+      }
+    });
+  };
 
   const [scaleImage, setScaleImage] = useState(1);
   const finalPrice = Math.ceil(price - price * (discount / 100));
@@ -31,8 +61,6 @@ const Product = ({ item, collection, addItemToCart }) => {
     finalPrice: finalPrice,
     quantity: 1,
   });
-  const [likeNum, setLikeNum] = useState(like);
-  const [solidHeart, setSolidHeart] = useState("-outlined");
   const [solidPlus, setSolidPlus] = useState("outline");
   const [solidMinus, setSolidMinus] = useState("outline");
 
@@ -41,15 +69,10 @@ const Product = ({ item, collection, addItemToCart }) => {
       (item) => item.recomended === recomended && item.name !== name
     )
   );
-  const handelChangeHeart = () => {
-    setSolidHeart(solidHeart === "-outlined" ? "" : "-outlined");
-    setLikeNum(likeNum === like ? like + 1 : like);
-  };
 
   const handelChangeQuantity = (event) => {
     const { name, value } = event.target;
     setAddToItems({ ...addToItems, [name]: parseInt(value) });
-    console.log(addToItems);
   };
 
   const handleSubmit = async (event) => {
@@ -76,8 +99,8 @@ const Product = ({ item, collection, addItemToCart }) => {
     <div className="product">
       <div className="left">
         <div className="heart" onClick={handelChangeHeart}>
-          <span className="heart-num">{likeNum}</span>
-          <span className={`icon-heart${solidHeart} heart-icon`}></span>
+          <span className="heart-num">{likeNum.likes}</span>
+          <span className={`icon-heart${likeNum.icon} heart-icon`}></span>
         </div>
         <div className="image-container">
           <ReactImageMagnify
@@ -90,7 +113,7 @@ const Product = ({ item, collection, addItemToCart }) => {
                 alt: name,
                 isFluidWidth: true,
                 src: imageUrl,
-                width: window.width <=  767.98 ? 200 : 900,
+                width: window.width <= 767.98 ? 200 : 900,
               },
               largeImage: {
                 src: imageUrl,
