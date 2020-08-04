@@ -79,6 +79,7 @@ const Product = ({ item, collection, addItemToCart }) => {
     event.preventDefault();
 
     setAddToItems({ ...addToItems, finalPrice: finalPrice });
+    addItemToCart(addToItems);
   };
 
   const handelChangeAddScale = () => {
