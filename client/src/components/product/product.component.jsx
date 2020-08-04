@@ -38,9 +38,9 @@ const Product = ({ item, collection, addItemToCart }) => {
   });
 
   const handelChangeHeart = () => {
-    const { likes, icon } = likeNum;
+    const { likes } = likeNum;
     setLikeNum(() => {
-      if (likes === like && icon === "-outlined") {
+      if (likes === like) {
         return {
           likes: like + 1,
           icon: "",
