@@ -17,8 +17,6 @@ const ProductPage = ({ match, collection, fetchCollectionsStart }) => {
     collections.filter((item) => item.link === match.params.ProductLink)
   );
 
-  console.log(items);
-
   return (
     <div className="product-page">
       {items.map((item) =>
